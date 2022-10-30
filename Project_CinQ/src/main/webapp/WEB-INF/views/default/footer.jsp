@@ -10,11 +10,15 @@
 <title>default/footer.jsp</title>
 <style type="text/css">
 .footer {
-	margin: 0;
-	text-align: center;
-	background-color: green;
+   margin: 0;
+   text-align: center;
+   background-color: #aaaaaa;
+   position: absolute;
+   bottom:0;
+   width: 100%
 }
 span {
+	height: 50px;
 	color: black;
 	font-size: 20px;
 }
@@ -23,7 +27,7 @@ span {
 <body>
 	<div class="footer">
 		<hr>
-		<span> Copyright &copy; CINQ </span>
+		<h3> Copyright &copy; CINQ </h3>
 	</div>
 </body>
 </html>

@@ -17,7 +17,7 @@
     width: auto;
     margin: auto;
     text-align: center;
-    background-color: gray;
+    background-color: #C2C0B5;
 }
 .header {
     margin: 0;
@@ -25,13 +25,13 @@
 .title {
     font-size: 50px;
     text-align: center;
-    background-color: orange;
+    background-color: #C2C0B5;
 }
 
 nav {
     margin: 0;
     width: 100%;
-    background-color: olive;
+    background-color: #C2C0B5;
 }
 nav ul {
     list-style: none;

@@ -19,6 +19,10 @@
    width: 500px;
    margin: auto;
 }
+
+body{
+	background-color: #C2C0B5;
+}
 </style> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -36,7 +40,7 @@
          <b>제 목</b>
          	<input type="text" name="title" size="50"><br><br>
          <b>장소 이미지</b>
-		 	<img src="#" id="preview" width="350px" height="250px"><br>
+		 	<img border="1px" src="#" id="preview" width="350px" height="250px"><br>
 			<input type="file" name="image" value="장소사진" onchange="readURL(this)"><br><br>
 		 <b>내 용</b>
          	<textarea rows="10" cols="50" name="content" placeholder="모집 분야, 일시, 희망 가격을 입력해 주세요"></textarea><br><br>
@@ -49,7 +53,7 @@
  		  <input type="hidden" id="loc_sep_name" name="loc_sep_name">
           <br/>
           <br/>
-         <b>모집인원</b>
+         <b>최대 수용 인원</b>
          <input type="number" min="0" max="100" id="max_count" name="max_count" />      
          <br><br>   
          <input type="button" onclick="writeSave()" value="작성완료"><br><br>

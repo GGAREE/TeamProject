@@ -13,10 +13,22 @@
 <style type="text/css">
 .Sproject{
    align : center;
-   border-collapse: collapse;
+   border-collapse:collapse;
+   font-size: 18px;
+
 }
-tr {border-top: 1px solid black;}
-td {padding: 5px;}
+body{
+	background-color: #C2C0B5;
+}
+tr {border: 1px solid black;} 
+
+th {
+	padding: 30px;
+	text-align:left;
+}
+td {padding: 5px;
+	border: 1px solid olive;
+}
 </style>
 </head>
 <body>
@@ -27,7 +39,7 @@ td {padding: 5px;}
       <div class ="place_view" align="center">
          <table class="Sproject" >
             <tr>
-               <th width="150px">작성자</th><td colspan="2">${data.id }</td>
+               <th width="130px">작성자</th><td width="400px" colspan="2">${data.id }</td>
             </tr>
             <tr>
                <th>제 목</th><td colspan="2">${data.title }</td>
@@ -36,8 +48,8 @@ td {padding: 5px;}
                <th>지 역</th><td colspan="2">${data.loc_sep_name}</td>
             </tr>
             <tr>
-               <th>내용</th>
-               <td colspan="2">
+               <th>장소사진</th>
+               <td>
                   <c:if test="${data.image == 'nan'}">
                      <b>이미지가 없습니다..</b>
                   </c:if>
@@ -45,7 +57,12 @@ td {padding: 5px;}
                  	<img src="${contextPath}/place/download?imageFileName=${data.image}" width="200px" height="200px">
                   </c:if>
                </td>
-               <td>${data.content}</td>
+              </tr>
+            <tr>
+               <th>내 용</th><td colspan="2">${data.content}</td>
+            </tr>
+            <tr>
+               <th>최대 수용 인원</th><td colspan="2">${data.max_count}명</td>
             </tr>
             <tr>
 				<td colspan="4" align="center">

@@ -31,11 +31,17 @@
 	width: 500px;
 	margin: auto;
 }
+b {
+	font-size: 24px;
+}
+body {
+	background-color: #C2C0B5;
+}
 </style>
 </head>
 <body>
 	<c:import url="../default/header.jsp"/>
-	<h1 class="modify_title">글쓰기</h1>
+	<h1 class="modify_title">글쓰기</h1><br><br>
 	<div class="modify" align="center">
 		<div class="modify_save">
 		<form action="${contextPath }/place/modify" enctype="multipart/form-data" method="post">
@@ -47,7 +53,7 @@
 			<input type="text" name="title" value="${data.title}" size="50"><br>
 			<b>내 용</b><br>
 			<textarea rows="10" cols="50" name="content">${data.content }</textarea><br>
-			<b>파일 첨부</b>
+			<b>장소 사진</b>
 			<img src="${contextPath }/place/download?imageFileName=${data.image}" id="preview" width="100px" height="100px"><br><br>
 			<input type="file" name="image_file_name" onchange="readURL(this)">
 			<input type="submit" value="수정완료"> &nbsp;
