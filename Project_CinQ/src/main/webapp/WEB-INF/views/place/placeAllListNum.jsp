@@ -81,7 +81,7 @@ a:visited {color:#000069;}
         <th  width="300px">PROFILE</th>
          <th width="100px">LOCATION</th>
          <th width="700px">CONTENT</th>
-         <th width="100px">MAX_ARTIST</th> 
+         <th width="100px">MAX_ARTIST</th>  
       </tr>
       <c:if test="${placeList.size() == 0}">
             <tr>

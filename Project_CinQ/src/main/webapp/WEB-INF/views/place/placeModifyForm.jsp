@@ -36,7 +36,7 @@ b {
 }
 body {
 	background-color: #C2C0B5;
-} 
+}  
 </style>
 </head>
 <body>

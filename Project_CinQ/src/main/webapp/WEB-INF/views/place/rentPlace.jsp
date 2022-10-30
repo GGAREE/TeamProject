@@ -30,7 +30,7 @@ body{
 <script src='<c:url value="/resources/script/js/post.js"/>'></script>
 <script src='<c:url value="/resources/script/js/file.js"/>'></script>
 </head>
-<body> 
+<body>  
    <c:import url="../default/header.jsp"/>
    <h1 class="rentPlace_title">장소 등록</h1>
    <div class="Place" align="center"> 
