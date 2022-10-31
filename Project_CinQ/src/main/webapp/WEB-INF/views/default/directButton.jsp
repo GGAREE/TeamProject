@@ -43,15 +43,15 @@ button{
   appearance: none;
   background-color: 0,0,0,0.8;
   border: 2px solid black;
-  border-radius: 0.6em;
+  border-radius: 1em;
   color: black;
   cursor: pointer;
   display: flex;
   position: fixed;
-  bottom: 50px;
+  bottom: 30px;
   align-self: center;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 100;
   line-height: 1;
   margin: 20px;
   padding: 1.2em 2.8em;
@@ -67,14 +67,14 @@ button:hover {
 	background-color: black;  
 }
 .first {
-  right : 100px;
+  right : 400px;
 }
 .second {
-  right : 400px;
+  right : 800px;
   
 }
 .third {
-  right : 700px;
+  right : 1200px;
 }
 
 </style>

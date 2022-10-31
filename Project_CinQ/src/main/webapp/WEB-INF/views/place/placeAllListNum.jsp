@@ -10,49 +10,10 @@
 <head>
 <meta charset="UTF-8">
 <title>placeAllListNum</title>
-<style type="text/css">
-/*  .searchPlace{
-    display: inline-block;
-    margin-top: 30px;
-    margin-left: 260px;
-  }
-  .searchArea input{
-      height: 30px;
-    width: 250px;
-  } */
-  .searchArea button{
-     width: 100px;
-    height: 36px;
-  } 
-.placeTable{
-   /* float: right; */ 
-   align : center;
-   border-collapse: collapse;
-}
-.title1{
-   background-color: #e6f1ff;
-}
-tr {border-top: 1px solid black;
-   }
 
-tr:hover {background-color: #dcdcdc; cursor: pointer;}
-
-td {
-   padding: 5px;
-   font-size: 18px;
-}
-a {
-   text-decoration: none;
-}
-a:link {color:black;}
-a:visited {color:#000069;}
-/* div {text-align:center;
-} */
-
-.main{
-	background-color: #C2C0B5
-}
-</style>
+<link href="${contextPath}/resources/script/css/listNum.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
 <script type="text/javascript">
 
 
@@ -64,93 +25,80 @@ a:visited {color:#000069;}
    <input type="hidden" name="place" value="${loc_sep_name }">
    <!-- <div align="center"> -->
    <br>
-   <h1 align="center"> 등록된 장소 목록 </h1>
+   <h1 align="center"> Place List </h1>
    <form action="placeSearchList" method="post" enctype='multipart/form-data'>
-   	<div class="searchPlace">
-   		<input name="loc_sep_name" type="text" placeholder="지역 입력(예시:강남)"> &nbsp; <input type="submit" value="검색">
-   	</div>
+   	<div class="search-box">
+      <input type="text" class="search-txt" name="loc_sep_name"placeholder="지역 검색  (예시 : 강남)">
+      <a class="search-btn" href="#">
+        <i class="fas fa-search"></i>
+      </a>
+    </div>
    	<!-- <input type="submit" value="검색"> -->
    </form>
    <br>
-   <div>
-   <table class="placeTable">
-      <tr class= "title1">
-         <th width="100px">ID</th>
-         <th width="100px">NUMBER</th>
-         <th width="500px">TITLE</th>
-        <th  width="300px">PROFILE</th>
-         <th width="100px">LOCATION</th>
-         <th width="700px">CONTENT</th>
-         <th width="100px">MAX_ARTIST</th>  
-      </tr>
+   <!-- 등록된 장소 목록 부분 -->
+   
       <c:if test="${placeList.size() == 0}">
             <tr>
-               <th colspan="6">등록된 글이 없습니다</th>
+               <th>등록된 글이 없습니다</th>
             </tr>   
       </c:if>
+     <div class="placeList">
+     <table>
       <c:forEach var="dto" items="${placeList}">
-            <tr>
-				<td align="center">${dto.id}</td>
-				<td align="center"><a href="/root/place/placeView?write_no=${dto.write_no}">${dto.write_no}</a></td>
-				<td align="center">${dto.title}</td>
-				  <c:if test="${dto.image == 'nan'}">
-                    <td>
-                     	<b>이미지가 없습니다..</b>
-                  	</td>
-                  </c:if>
-                  <c:if test="${dto.image != 'nan'}">
-                 	<td>
-                 	<a href="/root/place/placeView?write_no=${dto.write_no}"><img src="${contextPath}/place/download?imageFileName=${dto.image}" align="center" width="300px" height="200px"></a>
-                  	</td>
-                  </c:if>
-                <td align="center"><a href="/root/place/placeView?write_no=${dto.write_no}">${dto.loc_sep_name}</a></td>
-				<td align="center"><a href="/root/place/placeView?write_no=${dto.write_no}">${dto.content}</a></td>
-				<td align="center"><a href="/root/place/placeView?write_no=${dto.write_no}">${dto.max_count}</a></td>
-            </tr>
+          <c:if test="${dto.image == 'nan'}">
+               <td>
+                   <b>이미지가 없습니다..</b>
+               </td>
+          </c:if>
+          <c:if test="${dto.image != 'nan'}">
+              <td rowspan="3">
+                  <div class="wrapper">
+   					 <div class="circle"></div>
+				  </div>
+                  <a href="/root/place/placeView?write_no=${dto.write_no}"><img src="${contextPath}/place/download?imageFileName=${dto.image}" width="400px" height="450px"></a>
+ 			      <br>
+ 				  <a href="/root/place/placeView?write_no=${dto_s.write_no}">Title : ${dto.title}</a>
+ 				  <br> 
+ 				  <a href="/root/place/placeView?write_no=${dto_s.write_no}">Capacity : ${dto.max_count}</a>      
+              </td>
+              &emsp; &emsp; &emsp; &emsp;
+          </c:if>
       </c:forEach>
-      
-       <c:if test="${placeSearchList.size() == 0}">
-            <tr>
-               <th colspan="7">검색하신 지역중에 등록된 장소가 없습니다</th>
-            </tr>   
-      </c:if>
-       <c:forEach var="dto_s" items="${placeSearchList}">
-            <tr>
-				<td>${dto_s.id}</td>
-				<td><a href="/root/place/placeView?write_no=${dto_s.write_no}">${dto_s.write_no}</a></td>
-				<td>${dto_s.title}</td>
-				  <c:if test="${dto_s.image == 'nan'}">
-                    <td>
-                     	<b>이미지가 없습니다..</b>
-                  	</td>
-                  </c:if>
-                  <c:if test="${dto_s.image != 'nan'}">
-                 	<td>
-                 	<a href="/root/place/placeView?write_no=${dto_s.write_no}"><img src="${contextPath}/place/download?imageFileName=${dto_s.image}" width="200px" height="200px"></a>
-                  	</td>
-                  </c:if>
-                <td><a href="/root/place/placeView?write_no=${dto_s.write_no}">${dto_s.loc_sep_name}</a></td>
-				<td><a href="/root/place/placeView?write_no=${dto_s.write_no}">${dto_s.content}</a></td>
-				<td><a href="/root/place/placeView?write_no=${dto_s.write_no}">${dto_s.max_count}</a></td>
-            </tr>
-      </c:forEach>
-      
-      <tr>
-         <td colspan="6" align="center">
-             <c:forEach var="num" begin="1" end="${repeat}">
-                 <a href="placeAllListNum?num=${num}">[${num}]</a>
-             </c:forEach>
-         </td>
-     </tr>
-         
-     <tr>
-        <td colspan="6" align="center">
-            <a href="${contextPath }/place/rentPlace">글작성</a>
-        </td>
-     </tr>
-     </table>
-     </div>
+      </table>
    </div>
+   <c:if test="${placeSearchList.size() == 0}">
+       <tr>
+           <th colspan="7">검색하신 지역중에 등록된 장소가 없습니다</th>
+       </tr>   
+   </c:if>
+   <c:forEach var="dto_s" items="${placeSearchList}">
+       <tr>
+	       <td><a href="/root/place/placeView?write_no=${dto_s.write_no}">${dto_s.write_no}</a></td>
+		   <td>${dto_s.title}</td>
+		   <c:if test="${dto_s.image == 'nan'}">
+               <td>
+               <b>이미지가 없습니다..</b>
+               </td>
+           </c:if>
+           <c:if test="${dto_s.image != 'nan'}">
+               <td><a href="/root/place/placeView?write_no=${dto_s.write_no}"><img src="${contextPath}/place/download?imageFileName=${dto_s.image}" width="200px" height="200px"></a></td>
+           </c:if>
+                <td><a href="/root/place/placeView?write_no=${dto_s.write_no}">${dto_s.loc_sep_name}</a></td>
+				<td><a href="/root/place/placeView?write_no=${dto_s.write_no}">${dto_s.max_count}</a></td>
+       </tr>
+   </c:forEach>
+      <div class="helper">
+      <c:forEach var="num" begin="1" end="${repeat}">
+          <a href="placeAllListNum?num=${num}">[${num}]</a>
+       </c:forEach>
+       </div>  
+       <br>
+       <div >
+          <a class="button" href="${contextPath }/place/rentPlace">글작성</a>
+       </div>
    <c:import url="../default/footer.jsp"/>
+   </div>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html> 

@@ -8,57 +8,86 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&display=swap" rel="stylesheet">
 <title>default/header.jsp</title>
 <style type="text/css">
 * { 
     margin: 0;
 }
-.wrap {
-    width: auto;
+a{
+	text-decoration: none;
+	color: black;
+}
+a:hover{
+	color: #646464;
+}
+
+.wrap_1 {
+	
+	width:100%;
     margin: auto;
     text-align: center;
-    background-color: #C2C0B5;
+    background-color: #BEBEBE;
+ 
+}
+.wrap_2 {
+	
+	width:100%;
+    margin: auto;
+    text-align: center;
+    background-color: #BEBEBE;
+    border-bottom: 6px solid black;
 }
 .header {
+	
     margin: 0;
+    flex: 0 0 auto;
 }
 .title {
-    font-size: 50px;
+    font-size: 60px;
     text-align: center;
-    background-color: #C2C0B5;
+    background-color: 	#bebebe;
 }
 
 nav {
+	font-family: 'Hahmlet', serif;
+	font-size:23px;
     margin: 0;
     width: 100%;
-    background-color: #C2C0B5;
+    background-color: #BEBEBE;
 }
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: end;
+    justify-content: first;
+    font-size:23px;
 }
 nav ul li {
     padding: 10px;
+    font-size:23px;
+    
 }
 .joinList {
+	
 	text-align: left;
+}
+
+.loginUser{
+	float: right;
+    border:1px solid while; 
 }
 </style>
 </head>
 <body>
-    <div class="wrap">
+    <div class="wrap_1">
         <div class="header">
             <h1 class="title">CINQ</h1>	
 		</div>
     </div>
     <!-- // wrap -->
-        <div class="wrap">
+        <div class="wrap_2">
             <nav>
-            	<div class="joinList" >
-            		<a href="/root/join/joinAllListNum">구인게시판</a>&nbsp;
-            		<a href="/root/place/placeAllListNum">장소게시판</a>
-                </div>
+            	
                 <ul>
                     <li><a href = "/root/index">HOME</a></li>
                     <li>
@@ -67,16 +96,14 @@ nav ul li {
                             <a href="/root/member/login">로그인</a>
                         </c:if>
                         <c:if test="${loginUser != null}">
-                            <a href="/root/member/myinfo1?id=${loginUser}">마이페이지</a>&nbsp;
-                            <a href="/root/member/logout">로그아웃</a>
+                            <a href="/root/member/myinfo1?id=${loginUser}">MY PAGE</a>&nbsp;
+                            <a href="/root/member/logout">LOGOUT</a>
+                            <pre>${loginUser}님</pre>              
                         </c:if>
                     </li>
-                    
-
-
-                </ul>
+                 </ul>
             </nav>
-        </div>
+        </div>  
     <!-- // navdiv -->
 </body>
 </html>

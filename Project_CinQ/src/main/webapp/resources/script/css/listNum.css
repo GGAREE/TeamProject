@@ -1,0 +1,180 @@
+@charset "UTF-8";
+
+.main{
+	background-color: #BEBEBE;
+}
+
+/* .placeTable{
+   float: right; 
+   align : center;
+   font-size: 20px;
+   border-collapse: collapse;
+} */
+
+
+.search-box{
+  padding: 3px;
+  position: absolute;
+  top: 15%;
+  right: 2%;
+  
+  height: 30px;
+  background-color: #fff;
+  border: 1px solid #51e3d4;
+  border-radius: 30px;
+  transition: 0.4s;
+  width:30px;
+}
+.search-box:hover{
+  box-shadow: 0px 0px .5px 1px #51e3d4;
+  width: 282px;
+}
+.search-btn{
+  text-decoration: none;
+  float: right;
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #51e3d4;
+}
+.search-box:hover > .search-btn{
+  background-color: #fff;
+}
+.search-txt{
+  display: flex;
+  padding: 0;
+  width: 0px;
+  border:none;
+  background: none;
+  outline: none;
+  float: left;
+  font-size: 1rem;
+  line-height: 30px;
+  transition: .4s;
+}
+.search-box:hover > .search-txt{
+  width: 240px;
+  padding: 0 6px;
+}
+  
+.placeList{
+	height: 800px;
+}	
+.circle {
+        margin: 0 auto;
+        width: 0px;
+        height: 0px;
+        border: 20px solid #83A2A5;
+        border-radius: 50%;
+    }
+    
+.wrapper {
+        margin: 0 auto;
+        padding: 30px;
+        max-width: 1170px;
+    }
+
+.title1{
+   background-color: #e6f1ff;
+}
+.helper{
+	
+	background-color:#BEBEBE; 
+	font-size: 22px;
+	
+}
+
+tr {border-top: 1px solid black;
+   }
+
+tr:hover { cursor: pointer;}
+
+td {
+   padding: 5px;
+   font-size: 18px;
+}
+a {
+   text-decoration: none;
+}
+a:link {color:black;}
+a:visited {color:#000069;}
+
+b {
+	text-align:center;
+	
+}
+
+.helper {
+  width: 90%;
+  margin: 40px auto;
+  text-align: center;
+}
+.button{
+  $btn-color: random-color($max:200);
+  $btn-color-dark: shade($btn-color, 40%);
+  color: tint($btn-color);
+  
+  &:before,
+  &:after {
+    content: '';
+    @include absolute(0,0,0,0);
+  }
+
+  &:before {
+    right: -50px;
+    border-right: 50px solid transparent;
+    border-bottom: $btn-height solid $btn-color-dark;
+    transform: translateX(-100%);
+  }
+  
+  &:after {
+    left: -50px;
+    border-left: 50px solid transparent;
+    border-top: $btn-height solid $btn-color-dark;
+    transform: translateX(100%);
+  }
+
+  &:hover {
+    color: tint($btn-color, 75%);
+
+    &:before { transform: translateX(-49%); }
+    &:after { transform: translateX(49%); }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
