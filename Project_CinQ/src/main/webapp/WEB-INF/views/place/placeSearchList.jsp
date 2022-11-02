@@ -34,8 +34,9 @@
 	    </div>
     </form>
     <br>
-    <table class="placeTable">
+    <table class="Table">
         <tr class= "title1">
+        	<th width="100px">ID</th>
             <th width="100px">NUMBER</th>
          	<th width="250px">PROFILE</th>
          	<th width="500px">TITLE</th>
@@ -49,6 +50,7 @@
         </c:if>
         <c:forEach var="dto_s" items="${placeList}">
         	<tr id="content_row">
+        		<td id="content_td">${dto_s.id}</td>
 				<td id="content_td"><a href="/root/place/placeView?write_no=${dto_s.write_no}">${dto_s.write_no}</a></td>
 				<c:if test="${dto_s.image == 'nan'}">
                 <td>

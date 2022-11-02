@@ -40,8 +40,9 @@ font-family: 'Hahmlet', serif;
 		</form>
     <br>
     <div>
-    <table class="placeTable">
+    <table class="Table">
         <tr class= "title1">
+            <th width="100px">ID</th>
             <th width="100px">NUMBER</th>
             <th width="250px">PROFILE</th>
             <th width="500px">TITLE</th>
@@ -50,11 +51,12 @@ font-family: 'Hahmlet', serif;
         </tr>
         <c:if test="${placeList.size() == 0}">
             <tr>
-                <th colspan="5">등록된 글이 없습니다</th>
+                <th colspan="6">등록된 글이 없습니다</th>
             </tr>   
         </c:if>
         <c:forEach var="dto" items="${placeList}">
             <tr id="content_row">
+            	<td id="content_td">${dto.id}</td>
 				<td id="content_td"><a href="/root/place/placeView?write_no=${dto.write_no}">${dto.write_no}</a></td>
 				<c:if test="${dto.image == 'nan'}">
                     <td id="content_td">
