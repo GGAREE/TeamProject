@@ -7,23 +7,27 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&display=swap" rel="stylesheet">
 <title>default/footer.jsp</title>
 <style type="text/css">
 .footer {
 	margin: 0;
-	text-align: center;
-	background-color: green;
+	text-align: right;
+	background-color: #aaaaaa;
+	bottom:0;
+	width: 100%
 }
-span {
-	color: black;
-	font-size: 20px;
+#copy {
+	font-family: 'Hahmlet', serif;
+	font-size: 18px;
 }
+
 </style>
 </head>
 <body>
 	<div class="footer">
 		<hr>
-		<span> Copyright &copy; CINQ </span>
+		<p id="copy"> Copyright &copy; CINQ </p>
 	</div>
 </body>
 </html>

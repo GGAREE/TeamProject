@@ -6,9 +6,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&display=swap" rel="stylesheet">
 <meta charset="UTF-8">
 <title>index.jsp</title>
-
 <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> 
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
@@ -113,6 +113,10 @@ $(document).ready(function(){
 .Place_Content {
    position : relative;
 }
+
+*{
+font-family: 'Hahmlet', serif;
+}
 </style>
 </head>
 <body>
@@ -170,6 +174,8 @@ $(document).ready(function(){
 		</div>
 	</div>
 	<br><br><br>
+	<a href="/root/join/joinAllListNum">구인게시판</a>&nbsp;
+    <a href="/root/place/placeAllListNum">장소게시판</a>
 	<c:import url="default/footer.jsp"/>
 </body>
 </html>
