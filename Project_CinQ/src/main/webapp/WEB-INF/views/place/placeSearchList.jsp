@@ -14,7 +14,11 @@
 <link href="${contextPath}/resources/script/css/search.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
 
-
+<style type="text/css">
+*{
+font-family: 'Hahmlet', serif;
+}
+</style>
 <script type="text/javascript">
 
 
@@ -51,11 +55,11 @@
         <c:forEach var="dto_s" items="${placeList}">
         	<tr id="content_row">
         		<td id="content_td">${dto_s.id}</td>
-				<td id="content_td"><a href="/root/place/placeView?write_no=${dto_s.write_no}">${dto_s.write_no}</a></td>
+				<td id="content_image"><a href="/root/place/placeView?write_no=${dto_s.write_no}">${dto_s.write_no}</a></td>
 				<c:if test="${dto_s.image == 'nan'}">
-                <td>
-                    <b>이미지가 없습니다..</b>
-                </td>
+                	<td>
+                    	<b>이미지가 없습니다..</b>
+                	</td>
                 </c:if>
                 <c:if test="${dto_s.image != 'nan'}">
                 	<td id="content_td">
