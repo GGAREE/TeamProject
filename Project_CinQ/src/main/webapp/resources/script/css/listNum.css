@@ -11,7 +11,7 @@
 	
    margin:0 auto;
    font-size: 20px;
-   border-collapse: collapse;
+   
 } 
 
 
@@ -19,6 +19,7 @@
 	background-color: #002B22;
 	color: white;
 }
+
 
 tr {
 	/* border-top: 1px solid black; */
@@ -39,7 +40,7 @@ td {
 	
 }
 #content_td{
-	border: 1px solid black;
+	/*border: 1px solid black;*/
 }
 
 a {

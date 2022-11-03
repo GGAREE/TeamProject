@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Param;
 
 import com.project.root.join.dto.JoinDTO;
 import com.project.root.join.dto.JoinRepDTO;
+import com.project.root.place.dto.PlaceDTO;
 
 public interface JoinMapper {
 
@@ -36,4 +37,9 @@ public interface JoinMapper {
 	public int deleteReply(int write_no);
 	
 	public int joinIdDelete(String id);
+
+	public int selectJoinSearchCount(@Param("l")String title);
+
+	public List<JoinDTO>joinSearchList(@Param("l")String title,@Param("s")int start, @Param("e")int end);
+	public List<JoinDTO> joinOk(@Param("s")int start, @Param("e") int end);
 }

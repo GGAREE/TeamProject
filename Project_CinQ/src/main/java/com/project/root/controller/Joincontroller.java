@@ -24,6 +24,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
+import org.springframework.web.servlet.ModelAndView;
+
 
 import com.project.root.join.dto.JoinDTO;
 import com.project.root.join.dto.JoinRepDTO;
@@ -107,6 +109,20 @@ public class Joincontroller implements MemberSession{
 		out.println(message);
 		
 	}
-
+	
+	@RequestMapping("joinSearchList")
+	public String joinSearchList(@RequestParam(value="title") String title, Model model, @RequestParam(value = "num", required = false, defaultValue="1") int num) {
+		
+		js.joinSearchList(title, model, num);
+		  return "join/joinSearchList";
+		}
+	
+	@RequestMapping("joinOkView")
+	public String joinOkView(String title, Model model, @RequestParam(value = "num", required = false, defaultValue="1") int num) {
+	 	js.joinOkView(title,model, num);
+	 	return "join/joinOkView";
+ 	}
+	
+	
 	
 }

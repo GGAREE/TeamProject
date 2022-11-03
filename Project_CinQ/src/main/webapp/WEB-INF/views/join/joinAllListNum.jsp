@@ -22,12 +22,20 @@ font-family: 'Hahmlet', serif;
 </style>
 </head>
 <body>
-   <c:import url="../default/header.jsp"/>
-   <div class="main">
-   <br>
-   <h1 align="center"> Join List </h1>
-   <br>
-   <table class="Table">
+    <c:import url="../default/header.jsp"/>
+    <hr>
+    <input type="hidden" name="join" value="${title }">
+    <div class="main">
+    <br>
+    <h1 align="center"> Join List </h1>
+        <form action="joinSearchList" method="post" enctype='multipart/form-data'>
+	        <div class="search-box">
+		       <input type="text" class="search-txt" name="title" placeholder="지역 검색  (예시 : 강남)"> 
+			       <a class="search-btn" href="#"> <i class="fas fa-search"></i></a>
+		    </div>
+	    </form>
+    <br>
+    <table class="Table">
       <tr class= "title1">
          <th width="100px">ID</th>
          <th width="100px">NUMBER</th>

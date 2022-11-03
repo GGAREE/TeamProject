@@ -170,7 +170,8 @@ public class JoinServiceImpl implements JoinService{
 	}
 
 	@Override
-	public void deleteReply(int write_no) {		
+	public void deleteReply(int write_no) {
+		
 		mapper.deleteReply(write_no);
 		
 	}
@@ -180,6 +181,42 @@ public class JoinServiceImpl implements JoinService{
 		
 		mapper.joinIdDelete(id);
 	}
+
+
+	@Override
+	public void joinSearchList(String title, Model model, int num) {
+		int pageLetter = 3;// 한 페이지 당 글 목록수
+		int allCount = mapper.selectJoinSearchCount(title);// 전체 글수
+		int repeat = allCount/pageLetter;
+		if(allCount % pageLetter != 0)
+			repeat += 1;
+			
+		int end = num * pageLetter;
+		int start = end + 1 - pageLetter;
+		model.addAttribute("title",title);
+		model.addAttribute("repeat", repeat);
+		model.addAttribute("joinSearchList", mapper.joinSearchList(title, start, end));
+		
+	}
+
+
+	@Override
+	public void joinOkView(String title, Model model, int num) {
+		int pageLetter = 3;// 한 페이지 당 글 목록수
+		int allCount = mapper.selectJoinSearchCount(title);// 전체 글수
+		int repeat = allCount/pageLetter;
+		if(allCount % pageLetter != 0)
+			repeat += 1;
+			int end = num * pageLetter;
+			int start = end + 1 - pageLetter;
+			model.addAttribute("repeat", repeat);
+			model.addAttribute("joinOkView",mapper.joinOk(start, end));
+		
+	}
+
+	
+	
+	
 }
 
 	

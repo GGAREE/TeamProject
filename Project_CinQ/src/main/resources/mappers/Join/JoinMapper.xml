@@ -87,5 +87,23 @@
 		order by write_date desc
 	</select>
 	
+	<select id="joinSearchList" resultMap="join">
+      select B.* from
+      (select rownum rn, A. * from   
+      (select * from join where title like '%' || #{l} || '%' order by write_no desc ) A) B 
+      where rn between #{s} and #{e}
+   </select>
+   
+	<select id="selectJoinSearchCount" resultType="Integer">
+      select count(*) from join where title like '%' || #{l} || '%'
+    </select>
+	
+	<select id="joinOk" resultMap="join">
+	select B.* from
+      (select rownum rn, A. * from   
+      (select * from join where checkbox='N' order by write_no desc ) A) B 
+      where rn between #{s} and #{e}
+	</select>
+	
 </mapper> 
    

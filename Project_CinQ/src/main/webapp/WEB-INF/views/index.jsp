@@ -175,7 +175,8 @@ font-family: 'Hahmlet', serif;
 	</div>
 	<br><br><br>
 	<a href="/root/join/joinAllListNum">구인게시판</a>&nbsp;
-    <a href="/root/place/placeAllListNum">장소게시판</a>
+    <a href="/root/place/placeAllListNum">장소게시판</a>&nbsp;
+    <a href="/root/reservation/reservationAllListNum">예매게시판</a>
 	<c:import url="default/footer.jsp"/>
 </body>
 </html>
